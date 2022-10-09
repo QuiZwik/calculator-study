@@ -31,43 +31,43 @@
 
 .frame {
     background-color: rgba(219, 225, 231, 0.7);
-    width: 400px;
-    height: 700px;
+    width: 25rem;
+    height: 43.75rem;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 .frame .output {
-    height: 160px;
-    padding-top: 40px;
+    height: 10rem;
+    padding-top: 2.5rem;
 }
 
 .frame .output .output-item1 {
-    height: 60px;
-    line-height: 60px;
-    width: 340px;
-    padding: 0 30px;
+    height: 3.75rem;
+    line-height: 3.75rem;
+    width: 21.25rem;
+    padding: 0 1.875rem;
     text-align: right;
-    font-size: 16px;
+    font-size: 1rem;
     color: rgb(104, 108, 108);
 }
 
 .frame .output .output-item2 {
-    height: 100px;
-    line-height: 100px;
-    width: 340px;
-    padding: 0 30px;
+    height: 6.25rem;
+    line-height: 6.25rem;
+    width: 21.25rem;
+    padding: 0 1.875rem;
     text-align: right;
-    font-size: 46px;
+    font-size: 2.875rem;
     font-weight: bolder;
 }
 
 .frame .input {
-    height: 500px;
+    height: 31.25rem;
 }
 
 .frame .input .row {
-    height: 100px;
+    height: 6.25rem;
     /*border: 1px inset black;*/
     font-size: 0;
 }
@@ -77,20 +77,20 @@
 }
 
 .frame .input .row .first {
-    margin-left: 4px;
+    margin-left: 0.25rem;
 }
 
 .frame .input .row .colum {
-    font-size: 28px;
+    font-size: 1.75rem;
     text-align: center;
     display: inline-block;
-    margin-right: 4px;
-    margin-bottom: 4px;
-    width: 95px;
-    height: 95px;
-    line-height: 95px;
-    box-shadow: 1px 1px 2px #686c6c;
-    border-radius: 10px;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+    width: 5.9375rem;
+    height: 5.9375rem;
+    line-height: 5.9375rem;
+    box-shadow: 0.166rem 0.166rem 0.333rem #686c6c;
+    border-radius: 0.625rem;
     position: relative;
     z-index: 0;
     background-color: #fbfcfc;
@@ -104,7 +104,7 @@
 }
 
 .frame .input .row .colum::before {
-    border-radius: 10px;
+    border-radius: 0.625rem;
     content: '';
     position: absolute;
     left: 0;
@@ -129,8 +129,8 @@
 }
 
 .frame .input .row .colum:active {
-    width: 95px !important;
-    height: 95px !important;
+    width: 5.9375rem !important;
+    height: 5.9375rem !important;
     box-shadow: 0 0 3px #686c6c inset;
 }
 

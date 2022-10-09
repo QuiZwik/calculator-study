@@ -1,5 +1,36 @@
+.window {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-animation-name: "src"; /*检索或设置对象所应用的动画名称*/
+    -webkit-animation-duration: 30s; /*检索或设置对象动画的持续时间*/
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes "src" {  /*动画名称和上面设置的动画名称一样*/
+    /*下面是动画过程*/
+    0% {
+        background: url(./src/1.png) no-repeat;
+    }
+
+    50% {
+        background: url(./src/2.png) no-repeat;
+    }
+
+    100% {
+        background: url(./src/3.png) no-repeat;
+    }
+}
+
 .frame {
-    background-color: #dbe1e7;
+    background-color: rgba(219, 225, 231, 0.7);
     width: 400px;
     height: 700px;
     margin: 0 auto;
@@ -18,7 +49,7 @@
     padding: 0 30px;
     text-align: right;
     font-size: 16px;
-    color: #686c6c;
+    color: rgb(104, 108, 108);
 }
 
 .frame .output .output-item2 {

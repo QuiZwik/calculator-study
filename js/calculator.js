@@ -100,6 +100,8 @@ function onclickAble(buttonId) {
         number0 = undefined
         number1 = undefined
         able = undefined
+        pointFlag = false
+        pointBit = 0
     } else if (buttonId === "bplus" || buttonId === "bsub" || buttonId === "bmu" || buttonId === "bdi") {
         operation(buttonId)
     } else if (buttonId === "beq") {

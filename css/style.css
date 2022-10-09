@@ -14,7 +14,7 @@
     -webkit-animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes "src" {  /*动画名称和上面设置的动画名称一样*/
+@-webkit-keyframes src {  /*动画名称和上面设置的动画名称一样*/
     /*下面是动画过程*/
     0% {
         background: url(./src/1.png) no-repeat;

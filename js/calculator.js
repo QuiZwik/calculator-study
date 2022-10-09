@@ -61,11 +61,14 @@ function showResult() {
     }
 
     let str = ""
-    if (number0 && number1) {
-        str = `${number0}${ableButtonStrMap[able]}${number1}=`
-    } else if (number0) {
-        str = `${number0}${ableButtonStrMap[able]}`
-    }
+    selectState(
+        () => {
+            str = `${number0}${ableButtonStrMap[able]}${number1}=`
+        },
+        () => {
+            str = `${number0}${ableButtonStrMap[able]}`
+        }
+    )
 
     document.getElementById("output1").innerText = str
 }
@@ -93,16 +96,7 @@ function onclickAble(buttonId) {
         number1 = undefined
         able = undefined
     } else if (buttonId === "bplus" || buttonId === "bsub" || buttonId === "bmu" || buttonId === "bdi") {
-        if (number0 && number1) {
-            number0 = result
-            number1 = undefined
-        } else if (number0) {
-            // nothing to do
-        } else {
-            number0 = result
-        }
-        able = buttonId
-        result = undefined
+        operation(buttonId)
     } else if (buttonId === "beq") {
         eq()
     } else if (buttonId === "bpo") {
@@ -111,18 +105,60 @@ function onclickAble(buttonId) {
     showResult()
 }
 
+/**
+ * 按下运算符的方法（加减乘除）
+ */
+function operation(buttonId) {
+    selectState(
+        () => {
+            number0 = result
+            number1 = undefined
+        },
+        () => {
+            // nothing to do
+        },
+        () => {
+            number0 = result
+        }
+    )
+    able = buttonId
+    result = undefined
+}
+
+/**
+ * 按下=的方法
+ */
 function eq() {
     if (able) {
-        if (number0 && number1) {
-            number0 = result
-            result = ableButtonMap[able](number0, number1)
-        } else if (number0) {
-            number1 = result ? result : number0
-            result = ableButtonMap[able](number0, number1)
-        } else {
-            // nothing to do
-        }
+        selectState(
+            () => {
+                number0 = result
+                result = ableButtonMap[able](number0, number1)
+            },
+            () => {
+                number1 = result ? result : number0
+                result = ableButtonMap[able](number0, number1)
+            },
+            () => {
+                // nothing to do
+            }
+        )
     }
 }
 
-
+/**
+ * 根据显示状态选择执行
+ *
+ * @param fun0 number0、number1都有的时候
+ * @param fun1 number1 空的时候
+ * @param fun2 number0、number1都空的时候
+ */
+function selectState(fun0, fun1, fun2) {
+    if (number0 !== undefined && number1 !== undefined) {
+        fun0()
+    } else if (number0 !== undefined) {
+        fun1()
+    } else {
+        fun2()
+    }
+}

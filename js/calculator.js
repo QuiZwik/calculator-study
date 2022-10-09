@@ -48,12 +48,12 @@ let ableButtonStrMap = {
     "bdi": "÷",
 }
 
-let pointFlag = false
-let pointBit = 0  //记录小数位
-let result = 0
-let number0 = undefined
-let number1 = undefined
-let able = undefined
+let pointFlag = false // 小数点flag
+let pointBit = 0  // 记录小数位
+let result = 0 // id="output2"的div
+let number0 = undefined // id="output1"的div 第一位数
+let number1 = undefined // id="output1"的div 第二位数
+let able = undefined // 记录按了哪个运算符的buttonId 加减乘除
 
 function showResult() {
     if (result !== undefined) {

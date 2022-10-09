@@ -86,8 +86,15 @@ function onclickNumber(buttonId) {
 
 function onclickAble(buttonId) {
     if (buttonId === "bback") {
-        result -= result % 10
-        result /= 10
+        if (pointFlag) {
+            result -= result % 0.1 ** --pointBit
+            if (pointBit === 0) {
+                pointFlag = false
+            }
+        } else {
+            result -= result % 10
+            result /= 10
+        }
     } else if (buttonId === "bclear") {
         result = 0
         number0 = undefined
@@ -98,7 +105,7 @@ function onclickAble(buttonId) {
     } else if (buttonId === "beq") {
         eq()
     } else if (buttonId === "bpo") {
-        // pointFlag = true
+        pointFlag = true
     }
     showResult()
 }

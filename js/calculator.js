@@ -67,7 +67,8 @@ function showResult() {
         },
         () => {
             str = `${number0}${ableButtonStrMap[able]}`
-        }
+        },
+        () => {}
     )
 
     document.getElementById("output1").innerText = str

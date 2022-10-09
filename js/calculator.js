@@ -117,7 +117,7 @@ function eq() {
             number0 = result
             result = ableButtonMap[able](number0, number1)
         } else if (number0) {
-            number1 = result
+            number1 = result ? result : number0
             result = ableButtonMap[able](number0, number1)
         } else {
             // nothing to do

@@ -68,7 +68,8 @@ function showResult() {
         () => {
             str = `${number0}${ableButtonStrMap[able]}`
         },
-        () => {}
+        () => {
+        }
     )
 
     document.getElementById("output1").innerText = str
@@ -87,24 +88,24 @@ function onclickNumber(buttonId) {
 
 function onclickAble(buttonId) {
     if (buttonId === "bback") {
-        if (pointFlag) {
-            result -= result % 0.1 ** --pointBit
-            if (pointBit === 0) {
-                pointFlag = false
+        if (result !== undefined) {
+            if (pointFlag) {
+                result -= result % 0.1 ** --pointBit
+                if (pointBit === 0) {
+                    pointFlag = false
+                }
+            } else {
+                result -= result % 10
+                result /= 10
             }
-        } else {
-            result -= result % 10
-            result /= 10
         }
     } else if (buttonId === "bclear") {
-        if (result !== undefined) {
-            result = 0
-            number0 = undefined
-            number1 = undefined
-            able = undefined
-            pointFlag = false
-            pointBit = 0
-        }
+        result = 0
+        number0 = undefined
+        number1 = undefined
+        able = undefined
+        pointFlag = false
+        pointBit = 0
     } else if (buttonId === "bplus" || buttonId === "bsub" || buttonId === "bmu" || buttonId === "bdi") {
         operation(buttonId)
     } else if (buttonId === "beq") {

@@ -75,15 +75,13 @@ function showResult() {
 
 function onclickNumber(buttonId) {
     if (result === undefined) result = 0
-    if (result < 1000000000000) {
-        if (pointFlag) {
-            result += numberButtonMap[buttonId] * 0.1 ** ++pointBit
-        } else {
-            result *= 10
-            result += numberButtonMap[buttonId]
-        }
-        showResult()
+    if (pointFlag) {
+        result += numberButtonMap[buttonId] * 0.1 ** ++pointBit
+    } else {
+        result *= 10
+        result += numberButtonMap[buttonId]
     }
+    showResult()
 }
 
 function onclickAble(buttonId) {

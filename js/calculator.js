@@ -97,12 +97,14 @@ function onclickAble(buttonId) {
             result /= 10
         }
     } else if (buttonId === "bclear") {
-        result = 0
-        number0 = undefined
-        number1 = undefined
-        able = undefined
-        pointFlag = false
-        pointBit = 0
+        if (result !== undefined) {
+            result = 0
+            number0 = undefined
+            number1 = undefined
+            able = undefined
+            pointFlag = false
+            pointBit = 0
+        }
     } else if (buttonId === "bplus" || buttonId === "bsub" || buttonId === "bmu" || buttonId === "bdi") {
         operation(buttonId)
     } else if (buttonId === "beq") {
